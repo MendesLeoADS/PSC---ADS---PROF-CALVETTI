@@ -1,14 +1,14 @@
  import javax.swing.JOptionPane;
 
-public class solucao17 {
+  public class solucao2 {
     public static void main(String[] args) {
         int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
         int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
+        int soma = a + b;
 
-        if (a < b) {
-            JOptionPane.showMessageDialog(null, "O menor número é: " + a);
-        } else {
-            JOptionPane.showMessageDialog(null, "O menor número é: " + b);
+        if (soma <= 20) {
+            soma -= 5;
         }
+        JOptionPane.showMessageDialog(null, "Resultado: " + soma);
     }
 }

@@ -1,14 +1,12 @@
  import javax.swing.JOptionPane;
 
-public class solucao17 {
+  public class solucao22 {
     public static void main(String[] args) {
         int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
         int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
+        int c = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número:"));
 
-        if (a < b) {
-            JOptionPane.showMessageDialog(null, "O menor número é: " + a);
-        } else {
-            JOptionPane.showMessageDialog(null, "O menor número é: " + b);
-        }
+        int maior = Math.max(a, Math.max(b, c));
+        JOptionPane.showMessageDialog(null, "O maior número armazenado é: " + maior);
     }
 }

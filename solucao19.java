@@ -1,14 +1,14 @@
  import javax.swing.JOptionPane;
 
-public class solucao17 {
+  public class solucao19 {
     public static void main(String[] args) {
         int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
         int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
 
-        if (a < b) {
-            JOptionPane.showMessageDialog(null, "O menor número é: " + a);
+        if (a > b) {
+            JOptionPane.showMessageDialog(null, "Ordem decrescente: " + a + ", " + b);
         } else {
-            JOptionPane.showMessageDialog(null, "O menor número é: " + b);
+            JOptionPane.showMessageDialog(null, "Ordem decrescente: " + b + ", " + a);
         }
     }
 }

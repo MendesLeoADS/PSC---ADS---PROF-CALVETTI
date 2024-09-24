@@ -1,27 +1,17 @@
+ import javax.swing.JOptionPane;
+
   public class solucao14 {
     public static void main(String[] args) {
-    
-    // Verifica se exatamente um argumento foi fornecido
-        if (args.length != 1) {
-            System.out.println("Por favor, forneça o valor do raio do círculo como argumento.");
-            return;
-        }
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número inteiro de 4 casas:"));
 
-        try {
-            // Converte o argumento para double
-            double raio = Double.parseDouble(args[0]);
+        int milhar = (numero / 1000) % 10;
+        int centena = (numero / 100) % 10;
+        int novoNumero = milhar * 10 + centena;
 
-            // Define o valor de PI
-            final double PI = 3.14159;
-
-            // Calcula a área do círculo
-            double area = PI * raio * raio;
-
-            // Imprime o resultado
-            System.out.printf("A área do círculo com raio %.2f é %.2f\n", raio, area);
-
-        } catch (NumberFormatException e) {
-            System.out.println("O argumento fornecido deve ser um número real válido.");
+        if (novoNumero % 4 == 0) {
+            JOptionPane.showMessageDialog(null, novoNumero + " é múltiplo de 4.");
+        } else {
+            JOptionPane.showMessageDialog(null, novoNumero + " não é múltiplo de 4.");
         }
     }
 }
