@@ -2,16 +2,27 @@
 
   public class solucao14 {
     public static void main(String[] args) {
-        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número inteiro de 4 casas:"));
+        int contPrimos = 0;
 
-        int milhar = (numero / 1000) % 10;
-        int centena = (numero / 100) % 10;
-        int novoNumero = milhar * 10 + centena;
+        while (true) {
+            int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número inteiro positivo (ou um número não positivo para sair):"));
+            if (numero <= 0) {
+                break;
+            }
 
-        if (novoNumero % 4 == 0) {
-            JOptionPane.showMessageDialog(null, novoNumero + " é múltiplo de 4.");
-        } else {
-            JOptionPane.showMessageDialog(null, novoNumero + " não é múltiplo de 4.");
+            if (ehPrimo(numero)) {
+                contPrimos++;
+            }
         }
+
+        JOptionPane.showMessageDialog(null, "Quantidade de números primos digitados: " + contPrimos);
+    }
+
+    public static boolean ehPrimo(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
     }
 }

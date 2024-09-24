@@ -1,15 +1,24 @@
-  import javax.swing.JOptionPane;
+ import javax.swing.JOptionPane;
 
   public class solucao15 {
     public static void main(String[] args) {
-        int anoNascimento = Integer.parseInt(JOptionPane.showInputDialog("Digite seu ano de nascimento:"));
-        int anoAtual = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano atual:"));
+        int maior = Integer.MIN_VALUE;
+        int numero;
 
-        if (anoNascimento > 0 && anoNascimento <= anoAtual) {
-            int idade = anoAtual - anoNascimento;
-            JOptionPane.showMessageDialog(null, "Idade da pessoa: " + idade);
+        while (true) {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número (-9999 para sair):"));
+            if (numero == -9999) {
+                break;
+            }
+            if (numero > maior) {
+                maior = numero;
+            }
+        }
+
+        if (maior != Integer.MIN_VALUE) {
+            JOptionPane.showMessageDialog(null, "O maior número digitado foi: " + maior);
         } else {
-            JOptionPane.showMessageDialog(null, "Ano de nascimento inválido.");
+            JOptionPane.showMessageDialog(null, "Nenhum número válido foi digitado.");
         }
     }
 }

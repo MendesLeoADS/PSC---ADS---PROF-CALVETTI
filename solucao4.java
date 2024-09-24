@@ -1,42 +1,36 @@
  import javax.swing.JOptionPane;
 
-  public class solucao4 {
+   public class solucao4 {
     public static void main(String[] args) {
-        int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
-        int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
-        int c = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número:"));
+           String entrada;
+        int contador = 0;
 
-        int menor, medio, maior;
+        while (true) {
+            entrada = JOptionPane.showInputDialog("Digite um número (ou 0 para sair):");
 
-        if (a < b && a < c) {
-            menor = a;
-            if (b < c) {
-                medio = b;
-                maior = c;
-            } else {
-                medio = c;
-                maior = b;
+            if (entrada == null || entrada.isEmpty()) {
+                continue; 
+                
+       //se a entrada estiver vazia, continua pedindo um número
+       
             }
-        } else if (b < a && b < c) {
-            menor = b;
-            if (a < c) {
-                medio = a;
-                maior = c;
-            } else {
-                medio = c;
-                maior = a;
+
+            int numero = Integer.parseInt(entrada);
+
+            if (numero == 0) {
+                break; 
+                
+       //encerra o loop se o usuário digitar 0
             }
-        } else {
-            menor = c;
-            if (a < b) {
-                medio = a;
-                maior = b;
-            } else {
-                medio = b;
-                maior = a;
+
+            if (numero >= 100 && numero <= 200) {
+                contador++; 
+                
+       //incrementa o contador se o número estiver entre 100 e 200
+       
             }
         }
 
-        JOptionPane.showMessageDialog(null, "Ordem crescente: " + menor + ", " + medio + ", " + maior);
+        JOptionPane.showMessageDialog(null, "Você digitou " + contador + " números entre 100 e 200.");
     }
 }

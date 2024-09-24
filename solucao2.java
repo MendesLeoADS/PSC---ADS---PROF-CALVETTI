@@ -1,14 +1,15 @@
  import javax.swing.JOptionPane;
-
-  public class solucao2 {
+ 
+   public class solucao2 {
     public static void main(String[] args) {
-        int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
-        int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
-        int soma = a + b;
+        StringBuilder numerosPares = new StringBuilder();
 
-        if (soma <= 20) {
-            soma -= 5;
+        for (int i = 0; i < 100; i++) {
+            numerosPares.append(i * 2);
+            if (i < 99) {
+                numerosPares.append(", ");             }
         }
-        JOptionPane.showMessageDialog(null, "Resultado: " + soma);
+
+        JOptionPane.showMessageDialog(null, numerosPares.toString(), "100 Primeiros Números Pares", JOptionPane.INFORMATION_MESSAGE);
     }
 }

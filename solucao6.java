@@ -2,14 +2,15 @@
 
   public class solucao6 {
     public static void main(String[] args) {
-        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número:"));
-
-        if (numero > 20) {
-            JOptionPane.showMessageDialog(null, "Maior do que 20.");
-        } else if (numero == 20) {
-            JOptionPane.showMessageDialog(null, "Igual a 20.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Menor do que 20.");
+        double numero;
+        while (true) {
+            numero = Double.parseDouble(JOptionPane.showInputDialog("Digite um número (-999 para sair):"));
+            if (numero == -999) {
+                break;
+            }
+            double raiz = Math.sqrt(numero);
+            double inverso = 1 / numero;
+            JOptionPane.showMessageDialog(null, "Raiz quadrada: " + raiz + "\nInverso: " + inverso);
         }
     }
 }

@@ -2,14 +2,24 @@
 
   public class solucao13 {
     public static void main(String[] args) {
-        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número inteiro de 3 casas:"));
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número:"));
+        boolean ehPrimo = true;
 
-        int dezenas = (numero / 10) % 10;
-
-        if (dezenas % 2 == 0) {
-            JOptionPane.showMessageDialog(null, "O algarismo das dezenas é par.");
+        if (numero <= 1) {
+            ehPrimo = false;
         } else {
-            JOptionPane.showMessageDialog(null, "O algarismo das dezenas é ímpar.");
+            for (int i = 2; i <= Math.sqrt(numero); i++) {
+                if (numero % i == 0) {
+                    ehPrimo = false;
+                    break;
+                }
+            }
+        }
+
+        if (ehPrimo) {
+            JOptionPane.showMessageDialog(null, numero + " é um número primo.");
+        } else {
+            JOptionPane.showMessageDialog(null, numero + " não é um número primo.");
         }
     }
 }

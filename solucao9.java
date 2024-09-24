@@ -2,12 +2,13 @@
 
   public class solucao9 {
     public static void main(String[] args) {
-        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número:"));
-
-        if (numero % 3 == 0) {
-            JOptionPane.showMessageDialog(null, numero + " é múltiplo de 3.");
-        } else {
-            JOptionPane.showMessageDialog(null, numero + " não é múltiplo de 3.");
+        StringBuilder sb = new StringBuilder("Números de 1 a 100:\n");
+        int soma = 0;
+        for (int i = 1; i <= 100; i++) {
+            sb.append(i).append("\n");
+            soma += i;
         }
+        sb.append("Soma: ").append(soma);
+        JOptionPane.showMessageDialog(null, sb.toString());
     }
 }

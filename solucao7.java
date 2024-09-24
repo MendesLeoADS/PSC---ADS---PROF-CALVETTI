@@ -2,14 +2,12 @@
 
   public class solucao7 {
     public static void main(String[] args) {
-        String nome = JOptionPane.showInputDialog("Digite seu nome:");
-        String sexo = JOptionPane.showInputDialog("Digite seu sexo (f ou m):");
-        int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade:"));
-
-        if (sexo.equalsIgnoreCase("f") && idade < 25) {
-            JOptionPane.showMessageDialog(null, nome + ": ACEITA.");
-        } else {
-            JOptionPane.showMessageDialog(null, nome + ": NÃO ACEITA.");
+        StringBuilder sb = new StringBuilder("Múltiplos de 5 entre 1 e 500:\n");
+        for (int i = 1; i <= 500; i++) {
+            if (i % 5 == 0) {
+                sb.append(i).append("\n");
+            }
         }
+        JOptionPane.showMessageDialog(null, sb.toString());
     }
 }
