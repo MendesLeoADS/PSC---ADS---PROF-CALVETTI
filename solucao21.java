@@ -1,12 +1,18 @@
-  import javax.swing.JOptionPane;
-
+ import javax.swing.JOptionPane;
   public class solucao21 {
-    public static void main(String[] args) {
-        int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
-        int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
-        int c = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número:"));
+   public static void main(String[] args) {
+     StringBuilder resultado = new StringBuilder();
+        
+        for (int i = 0; i < 20; i++) {
+            String nome = JOptionPane.showInputDialog("Digite o nome da pessoa " + (i + 1) + ":");
+            int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade de " + nome + ":"));
+            String sexo = JOptionPane.showInputDialog("Digite o sexo de " + nome + " (M/F):");
 
-        int maior = Math.max(a, Math.max(b, c));
-        JOptionPane.showMessageDialog(null, "O maior número é: " + maior);
+            if (sexo.equalsIgnoreCase("M") && idade > 21) {
+                resultado.append(nome).append("\n");
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, resultado.toString());
     }
 }

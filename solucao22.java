@@ -1,12 +1,13 @@
  import javax.swing.JOptionPane;
-
   public class solucao22 {
-    public static void main(String[] args) {
-        int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
-        int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
-        int c = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número:"));
-
-        int maior = Math.max(a, Math.max(b, c));
-        JOptionPane.showMessageDialog(null, "O maior número armazenado é: " + maior);
+   public static void main(String[] args) {
+   int limite = Integer.parseInt(JOptionPane.showInputDialog("Digite o limite superior:"));
+        StringBuilder resultado = new StringBuilder("Números ímpares: ");
+        
+        for (int i = 1; i < limite; i += 2) {
+            resultado.append(i).append(" ");
+        }
+        
+        JOptionPane.showMessageDialog(null, resultado.toString());
     }
 }

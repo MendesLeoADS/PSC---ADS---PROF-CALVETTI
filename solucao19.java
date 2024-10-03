@@ -1,14 +1,13 @@
  import javax.swing.JOptionPane;
-
   public class solucao19 {
-    public static void main(String[] args) {
-        int a = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro número:"));
-        int b = Integer.parseInt(JOptionPane.showInputDialog("Digite o segundo número:"));
-
-        if (a > b) {
-            JOptionPane.showMessageDialog(null, "Ordem decrescente: " + a + ", " + b);
-        } else {
-            JOptionPane.showMessageDialog(null, "Ordem decrescente: " + b + ", " + a);
+   public static void main(String[] args) {
+     int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número:"));
+        long fatorial = 1;
+        
+        for (int i = 2; i <= numero; i++) {
+            fatorial *= i;
         }
+        
+        JOptionPane.showMessageDialog(null, "Fatorial de " + numero + " é: " + fatorial);
     }
 }

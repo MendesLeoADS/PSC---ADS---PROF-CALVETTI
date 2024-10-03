@@ -1,21 +1,20 @@
  import javax.swing.JOptionPane;
-
   public class solucao24 {
-    public static void main(String[] args) {
-        int maior = Integer.MIN_VALUE;
-        int menor = Integer.MAX_VALUE;
-
-        for (int i = 1; i <= 5; i++) {
-            int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite o " + i + "º número:"));
-
-            if (numero > maior) {
-                maior = numero;
+   public static void main(String[] args) {
+    double total = 0;
+        
+        while (true) {
+            double preco = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do item (ou 0 para finalizar):"));
+            if (preco == 0) break;
+            int quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade do item:"));
+            
+            while (quantidade < 0) {
+                quantidade = Integer.parseInt(JOptionPane.showInputDialog("Quantidade inválida! Digite novamente:"));
             }
-            if (numero < menor) {
-                menor = numero;
-            }
+
+            total += preco * quantidade;
         }
 
-        JOptionPane.showMessageDialog(null, "Maior: " + maior + "\nMenor: " + menor);
+        JOptionPane.showMessageDialog(null, "Total a ser pago: " + total);
     }
 }
